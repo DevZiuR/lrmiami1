@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Lato:wght@300;400;500;700;900&display=swap');
+
+/* Luxury Design System for LR Miami Entertainment */
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 50%;
+
+    --radius: 0.5rem;
+
+    /* Steel Gray Variants */
+    --steel-gray-1: 0 0% 40%; /* #666666 */
+    --steel-gray-2: 0 0% 50%; /* #808080 */
+    --steel-gray-3: 0 0% 60%; /* #999999 */
+    --steel-gray-4: 0 0% 70%; /* #B3B3B3 */
+    --steel-gray-5: 0 0% 80%; /* #CCCCCC */
+    
+    /* Minimal gold accent for special highlights */
+    --gold-accent: 42 56% 52%; /* #BA9E54 */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-lato;
+  }
+
+  * {
+    @apply border-border;
+  }
+}
+
+@layer utilities {
+  .text-gradient-steel {
+    background: linear-gradient(135deg, #666666 0%, #808080 50%, #999999 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #BA9E54 0%, #CAA243 50%, #C89B3E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-steel {
+    background: linear-gradient(135deg, #666666 0%, #808080 50%, #999999 100%);
+  }
+
+  .bg-gradient-gold {
+    background: linear-gradient(135deg, #BA9E54 0%, #CAA243 50%, #C89B3E 100%);
+  }
+
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.4) 100%);
+  }
+
+  .luxury-shadow {
+    box-shadow: 0 25px 50px -12px rgba(102, 102, 102, 0.25);
+  }
+
+  .luxury-shadow-steel {
+    box-shadow: 0 25px 50px -12px rgba(128, 128, 128, 0.3);
+  }
+
+  .premium-border {
+    border: 1px solid;
+    border-image: linear-gradient(135deg, #666666, #808080, #999999) 1;
+  }
+
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes luxuryGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(128, 128, 128, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(128, 128, 128, 0.5);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(128, 128, 128, 0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-luxury-glow {
+  animation: luxuryGlow 3s ease-in-out infinite;
+}
+
+/* Enhanced Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 32px 64px -12px rgba(128, 128, 128, 0.4);
+}
+
+/* Navigation Enhancements */
+nav a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #666666, #808080, #999999);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
