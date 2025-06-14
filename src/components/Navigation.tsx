@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { getPublicUrl, mediaPaths } from '@/lib/media';
 
 const Navigation = () => {
   return (
@@ -11,18 +12,15 @@ const Navigation = () => {
           <div className="flex items-center">
             <Link to="/">
               <img 
-                src="https://i.imgur.com/WPDYIq5.jpeg" 
+                src={getPublicUrl(mediaPaths.logo)}
                 alt="LR Miami Entertainment" 
-                className="h-12 rounded-lg luxury-shadow-steel"
+                className="h-12 rounded-lg luxury-shadow-steel object-contain"
               />
             </Link>
           </div>
           
           {/* Navigation Center */}
-          
-          
           <div className="hidden md:flex items-center space-x-8">
-
             <Link 
               to="/" 
               className="text-white transition-colors duration-300 font-medium font-playfair text-[20px] hover:text-gradient-gold hover:text-transparent hover:bg-clip-text px-3 py-1 rounded"

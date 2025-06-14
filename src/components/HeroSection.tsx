@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { getPublicUrl, mediaPaths } from '@/lib/media';
 
 const HeroSection = () => {
   const handleScrollClick = () => {
@@ -16,7 +17,7 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-gradient-to-b from-black/60 via-black/40 to-black/80"
         style={{
-          backgroundImage: 'url(https://i.imgur.com/vRAWMPW.jpeg)',
+          backgroundImage: `url(${getPublicUrl(mediaPaths.heroBackground)})`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-dark"></div>

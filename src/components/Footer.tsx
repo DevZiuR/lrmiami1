@@ -1,5 +1,6 @@
 import React from 'react';
 import { Instagram, Phone, Mail, Clock, MapPin } from 'lucide-react';
+import { getPublicUrl, mediaPaths } from '@/lib/media';
 
 const Footer = () => {
   return (
@@ -12,19 +13,19 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="w-32 h-16">
                 <img
-                  src="https://i.imgur.com/WPDYIq5.jpeg"
+                  src={getPublicUrl(mediaPaths.logo)}
                   alt="LR Miami Logo"
                   className="w-full h-full object-contain"
                 />
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Experience unparalleled luxury with our exclusive collection of premium vehicles. 
+              Experience unparalleled luxury with our exclusive collection of premium vehicles.
               We redefine luxury car rentals in Miami with exceptional service and world-class vehicles.
             </p>
-            <a 
-              href="https://www.instagram.com/lr_miami_/" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/lr_miami_/"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#FBF5B7] hover:scale-110 transition-transform duration-300"
             >

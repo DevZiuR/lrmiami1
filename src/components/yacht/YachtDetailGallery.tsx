@@ -1,17 +1,18 @@
-
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 
+// Supabase public URLs for yacht media
+const supabaseBase = 'https://ddpndaofmngjhpgwqkzz.supabase.co/storage/v1/object/public/media/';
+const media = [
+  { type: 'video', src: supabaseBase + 'yacht/video.mp4' },
+  { type: 'image', src: supabaseBase + 'yacht/image1.jpg' },
+  { type: 'image', src: supabaseBase + 'yacht/image2.jpg' },
+  { type: 'image', src: supabaseBase + 'yacht/image3.jpg' },
+  { type: 'image', src: supabaseBase + 'yacht/image4.jpg' },
+];
+
 const YachtDetailGallery = () => {
   const [selectedMedia, setSelectedMedia] = useState(0);
-  
-  const media = [
-    { type: 'video', src: 'https://i.imgur.com/4OtWjfn.mp4' },
-    { type: 'image', src: 'https://i.imgur.com/wQGqDVk.jpeg' },
-    { type: 'image', src: 'https://i.imgur.com/8k7x9Lm.jpeg' },
-    { type: 'image', src: 'https://i.imgur.com/5nF2pQs.jpeg' },
-    { type: 'image', src: 'https://i.imgur.com/7mR4tNp.jpeg' },
-  ];
 
   const nextMedia = () => {
     setSelectedMedia((prev) => (prev + 1) % media.length);

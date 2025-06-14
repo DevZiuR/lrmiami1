@@ -1,47 +1,48 @@
-
 import React from 'react';
+import { mediaPaths, getPublicUrl } from '@/lib/media';
 
 const BrandsSection = () => {
+  const placeholder = getPublicUrl('placeholder.svg');
   const brands = [
     {
       name: "Lamborghini",
-      logo: "https://gtrentals.es/wp-content/uploads/2023/08/lamborghini.svg"
+      logo: getPublicUrl(mediaPaths.brandLogos.lamborghini)
     },
     {
       name: "Rolls-Royce",
-      logo: "https://logohistory.net/wp-content/uploads/2023/01/Rolls-Royce-Logo.png"
+      logo: getPublicUrl('brands/Rolls-Royce-Logo.png')
     },
     {
       name: "Mercedes",
-      logo: "https://i.imgur.com/0XNbP5i.png"
+      logo: getPublicUrl(mediaPaths.brandLogos.mercedes)
     },
     {
-      name: "BMW i8",
-      logo: "https://gtrentals.es/wp-content/uploads/2023/08/bmw.svg"
+      name: "BMW",
+      logo: getPublicUrl(mediaPaths.brandLogos.bmw)
     },
     {
       name: "Audi",
-      logo: "https://gtrentals.es/wp-content/uploads/2023/08/audi.svg"
+      logo: getPublicUrl(mediaPaths.brandLogos.audi)
     },
     {
       name: "Ferrari",
-      logo: "https://gtrentals.es/wp-content/uploads/2023/08/ferrari.svg"
+      logo: getPublicUrl(mediaPaths.brandLogos.ferrari)
     },
     {
       name: "Porsche",
-      logo: "https://gtrentals.es/wp-content/uploads/2023/08/porsche.svg"
+      logo: getPublicUrl(mediaPaths.brandLogos.porsche)
     },
     {
       name: "McLaren",
-      logo: "https://gtrentals.es/wp-content/uploads/2023/08/mclaren.svg"
+      logo: getPublicUrl(mediaPaths.brandLogos.mclaren)
     },
     {
       name: "Corvette",
-      logo: "https://i.ibb.co/v60nwSqy/chevrolet-corvette-1.png"
+      logo: getPublicUrl('brands/chevrolet-corvette-1.png')
     },
     {
       name: "Land Rover",
-      logo: "https://gtrentals.es/wp-content/uploads/2023/01/land-rover.png"
+      logo: getPublicUrl(mediaPaths.brandLogos.landRover)
     }
   ];
 
@@ -56,7 +57,6 @@ const BrandsSection = () => {
           Handpicked vehicles from the world’s most celebrated luxury and exotic manufacturers.
           </p>
         </div>
-        
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 items-center">
           {brands.map((brand, index) => (
             <div 
@@ -70,11 +70,11 @@ const BrandsSection = () => {
                 style={{
                   filter: 'brightness(0) saturate(100%) invert(50%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(128%) contrast(100%)'
                 }}
+                onError={e => { e.currentTarget.onerror = null; e.currentTarget.src = placeholder; }}
               />
             </div>
           ))}
         </div>
-        
         {/* Premium Message */}
         <div className="text-center mt-12">
           <p className="text-steel-2 font-semibold text-lg">
