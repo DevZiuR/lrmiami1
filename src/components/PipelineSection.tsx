@@ -14,7 +14,7 @@ const PipelineSection = () => {
           <div className="relative">
             <div className="relative rounded-lg overflow-hidden luxury-shadow-steel">
               <video
-                src="https://i.imgur.com/OE8gV4H.mp4"
+                src="/media/pipeline/video.mp4"
                 autoPlay
                 muted
                 loop

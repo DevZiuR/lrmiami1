@@ -1,9 +1,10 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { getPublicUrl } from '@/lib/media';
 
 const YachtSection = () => {
+  const yachtVideo = getPublicUrl('pipeline/yatch1.mp4');
   return (
     <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4">
@@ -28,7 +29,6 @@ const YachtSection = () => {
               </Button>
             </Link>
           </div>
-          
           {/* Video */}
           <div className="relative">
             <div className="aspect-video rounded-lg overflow-hidden luxury-shadow">
@@ -38,12 +38,11 @@ const YachtSection = () => {
                 muted
                 loop
                 playsInline
+                src={yachtVideo}
               >
-                <source src="https://i.imgur.com/ZLX6fY0.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
-            
             {/* Overlay with price highlight */}
             <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-sm rounded-lg px-4 py-2">
               <div className="text-gold-1 font-semibold">LUXURY CHARTER</div>

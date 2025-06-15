@@ -15,6 +15,7 @@ import { format } from 'date-fns';
 import { CalendarIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
+import { getPublicUrl } from '@/lib/media';
 
 interface BookingFormData {
   name: string;
@@ -27,6 +28,7 @@ const YachtCharter = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm<BookingFormData>();
   const [selectedDate, setSelectedDate] = React.useState<Date | undefined>(undefined);
   const [selectedDuration, setSelectedDuration] = React.useState('4');
+  const yacht2Video = getPublicUrl('pipeline/yatch2.mp4');
 
   const calculatePrice = (duration: string) => {
     const basePrice = 1500;
@@ -66,8 +68,8 @@ const YachtCharter = () => {
                   muted
                   loop
                   playsInline
+                  src={yacht2Video}
                 >
-                  <source src="https://i.imgur.com/4OtWjfn.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
