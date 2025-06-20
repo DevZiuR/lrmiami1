@@ -121,16 +121,16 @@ const Footer = () => {
                   href="tel:+1234567890" 
                   className="text-gray-300 hover:text-gradient-gold transition-colors duration-300"
                 >
-                  +1 (234) 567-890
+                  +1 (305) 904-8151
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-gradient-gold" />
                 <a 
-                  href="mailto:info@lrmiami.com" 
+                  href="mailto:LRmiamiLLC@gmail.com" 
                   className="text-gray-300 hover:text-gradient-gold transition-colors duration-300"
                 >
-                  info@lrmiami.com
+                  LRmiamiLLC@gmail.com
                 </a>
               </li>
               <li className="flex items-center space-x-3">
