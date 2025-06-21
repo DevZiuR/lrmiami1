@@ -47,7 +47,7 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="/yacht" 
+                  href="/yacht-charter" 
                   className="text-gray-300 hover:text-gradient-gold transition-colors duration-300"
                 >
                   Yacht Charter
