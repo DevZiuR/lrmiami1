@@ -1,5 +1,7 @@
 # Welcome to your Lovable project
 
+<!-- Updated for Vercel deployment trigger -->
+
 ## Deployment Status
 Last updated: March 2024
 - Website: https://lrmiami.vercel.app/
